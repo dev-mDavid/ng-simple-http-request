@@ -1,4 +1,15 @@
 <h2>Simple Request</h2>
-<button>Make Request</button>
-<div>loading...</div>
-<pre></pre>
+<button
+  type="button"
+  (click)="makeRequest()"
+>
+  Make Request
+</button
+>
+<div
+  *ngIf="loading"
+>
+  loading...
+</div
+>
+<pre>{{ data | json }}</pre>
