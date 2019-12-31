@@ -12,6 +12,16 @@ export class SimpleHTTPComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
+  makeRequest():void {
+    this.loading = true;
+    this.http
+      .get('https://jsonplaceholder.typeicode.com/posts/1')
+      .subscribe(data => {
+        this.data = data;
+        this.loading = false;
+      });
+  }
+
   ngOnInit() {
   }
 
